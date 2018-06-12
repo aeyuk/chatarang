@@ -12,12 +12,12 @@ class Chat extends Component {
       messages: [
         {
           id: 1,
-          userName: 'stephen',
+          userName: 'Davey',
           body: 'cool',
         },
         {
           id: 2,
-          userName: 'dpalazzo',
+          userName: 'Dana',
           body: 'This guy is so annoying. I hate my job.',
         },
       ]
@@ -37,12 +37,23 @@ class Chat extends Component {
 
   render() {
     return (
-      <div className="Chat">
+      <div 
+        className="Chat"
+        style={styles.chat}
+      >
         <ChatHeader />
         <MessageList messages={this.state.messages} />
         <MessageForm addMessage={this.addMessage} />
       </div>
     )
+  }
+}
+
+const styles = {
+  chat: {
+    flex: '1',
+    display: 'flex',
+    flexDirection: 'column',
   }
 }
 

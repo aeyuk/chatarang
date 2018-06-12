@@ -30,10 +30,10 @@ const Sidebar = (props) => {
         className="RoomList"
         style={styles.children}
       >
-        <h2>Rooms</h2>
-        <ul>
-          <li><a href="#">general</a></li>
-          <li><a href="#">random</a></li>
+        <h2 style={styles.roomList_h2}>Rooms</h2>
+        <ul style={styles.roomList_ul}>
+            <li style={styles.roomList_li}><a href="#">general</a></li>
+            <li style={styles.roomList_li_a}><a href="#">random</a></li>
         </ul>
       </nav>
     </aside>
@@ -54,10 +54,30 @@ const styles = {
     padding: '0 1rem',
   },
 
-  h1: {
+  h2: {
     color: 'white',
     fontSize: '1.2rem',
-    marginTop: 0,
+    marginTop: '0',
+  },
+
+  roomList_h2: {
+      fontSize: '1rem',
+  },
+
+  roomList_ul: {
+      listStyle: 'none',
+      marginLeft: '0',
+      paddingLeft: '0',
+  },
+
+  roomList_li: {
+      marginBottom: '0.5rem',
+  },
+
+  roomList_li_a: {
+      display: 'block',
+      color: 'whitesmoke',
+      textDecoration: 'none',
   },
 }
 
