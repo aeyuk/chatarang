@@ -7,7 +7,6 @@ state = {
 }
 
     handleSubmit = (ev) => {
-        console.log('test')
         ev.preventDefault()
         this.props.addMessage(this.state.body)
     }
