@@ -2,13 +2,11 @@ import React from 'react'
 
 const RoomList = (props) => {
     return (
-        <nav
-        className="RoomList"
-      >
+        <nav className="RoomList">
         <h2 style={styles.h2}>Rooms</h2>
         <ul style={styles.ul}>
-            <li style={styles.lia}><a href="#">#general</a></li>
-            <li style={styles.lia}><a href="#">#random</a></li>
+            <li style={styles.li}><a style={styles.lia} href="#">#general</a></li>
+            <li style={styles.li}><a style={styles.lia} href="#">#random</a></li>
         </ul>
       </nav>
     )

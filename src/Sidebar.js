@@ -4,12 +4,12 @@ import RoomList from './RoomList'
 
 const Sidebar = (props) => {
   return (
-    <aside className="Sidebar" style={styles.sidebar} >
-      <div className="UserInfo" style={styles.children} >
+    <aside className="Sidebar" style={styles.sidebar}>
+      <div className="UserInfo" style={styles.userInfo}>
         <div className="Avatar" style={styles.avatar}></div>
-        <div className="user">{props.user.userName}</div>
+        <div className="user" style={styles.user}>{props.user.userName}</div>
         <a href="#">
-          <i className="fas fa-sign-out-alt"></i>
+          <i className="fas fa-sign-out-alt" style={styles.h2}></i>
         </a>
       </div>
       <h1
@@ -53,7 +53,18 @@ const styles = {
     width: '40px',
     fontSize: '1rem',
     borderRadius: '20px',
+    marginRight: '0.5rem'
   },
+
+  userInfo: {
+      marginBottom: '1rem',
+      display: 'flex',
+      alignItems: 'center',
+  },
+
+  user: {
+      flex: '1',
+  }
 }
 
 export default Sidebar
