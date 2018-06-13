@@ -3,14 +3,8 @@ import React from 'react'
 const Message = (props) => {
     return (
         <div 
-            className="Message"
-            style={styles.message}
-        >
-            <div 
-                className="Avatar"
-                style={styles.avatar}
-            >
-            </div>
+            className="Message" style={styles.message}>
+            <div className="Avatar" style={styles.avatar}></div>
             <div className="details" style={styles.details}>
                 <div className="Metadata" style={styles.metadata}>
                     <div 
