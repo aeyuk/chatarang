@@ -5,9 +5,9 @@ const ChatHeader = () => {
         <div
             className="ChatHeader"
             style={styles.header}
-            >
+        >
             <div className="roomInfo">
-                <h2 style={styles.h1} >#general</h2>
+                <h2 style={styles.h2} >#general</h2>
                 <p style={styles.p} >Announcements and general chat</p>
             </div>
         </div>

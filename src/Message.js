@@ -24,12 +24,12 @@ const Message = (props) => {
                     >1:10 PM
                     </div>
                 </div>
-            </div>
                 <div
                     className="body"
                     style={styles.body}
                 >{props.message.body}
                 </div>
+            </div>
         </div>
     )
 }
@@ -61,7 +61,6 @@ const styles = {
         paddingLeft: '0.5rem',
     },
     avatar: {
-        background: 'url(https://api.adorable.io/avatars/32/davey@getfretless.com)',
         height: '40px',
         width: '40px',
         fontSize: '1rem',

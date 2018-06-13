@@ -1,19 +1,13 @@
 import React from 'react'
 
+import RoomList from './RoomList'
+
 const Sidebar = (props) => {
   return (
-    <aside
-      className="Sidebar"
-      style={styles.sidebar}
-    >
-      <div
-        className="UserInfo"
-        style={styles.children}
-      >
-        <div className="Avatar"></div>
-        <div className="user">
-          {props.user.userName}
-        </div>
+    <aside className="Sidebar" style={styles.sidebar} >
+      <div className="UserInfo" style={styles.children} >
+        <div className="Avatar" style={styles.avatar}></div>
+        <div className="user">{props.user.userName}</div>
         <a href="#">
           <i className="fas fa-sign-out-alt"></i>
         </a>
@@ -26,16 +20,9 @@ const Sidebar = (props) => {
       >
         XTBC 18
       </h1>
-      <nav
-        className="RoomList"
-        style={styles.children}
-      >
-        <h2 style={styles.roomList_h2}>Rooms</h2>
-        <ul style={styles.roomList_ul}>
-            <li style={styles.roomList_li}><a href="#">general</a></li>
-            <li style={styles.roomList_li_a}><a href="#">random</a></li>
-        </ul>
-      </nav>
+
+      <RoomList/>
+
     </aside>
   )
 }
@@ -60,24 +47,12 @@ const styles = {
     marginTop: '0',
   },
 
-  roomList_h2: {
-      fontSize: '1rem',
-  },
-
-  roomList_ul: {
-      listStyle: 'none',
-      marginLeft: '0',
-      paddingLeft: '0',
-  },
-
-  roomList_li: {
-      marginBottom: '0.5rem',
-  },
-
-  roomList_li_a: {
-      display: 'block',
-      color: 'whitesmoke',
-      textDecoration: 'none',
+  avatar: {
+    background: 'url(https://api.adorable.io/avatars/32/davey@getfretless.com)',
+    height: '40px',
+    width: '40px',
+    fontSize: '1rem',
+    borderRadius: '20px',
   },
 }
 
