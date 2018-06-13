@@ -9,18 +9,7 @@ class Chat extends Component {
     super()
 
     this.state = {
-      messages: [
-        {
-          id: 1,
-          userName: 'Davey',
-          body: 'cool',
-        },
-        {
-          id: 2,
-          userName: 'Dana',
-          body: 'This guy is so annoying. I hate my job.',
-        },
-      ]
+      messages: []
     }
   }
 
@@ -28,20 +17,17 @@ class Chat extends Component {
     const messages = [...this.state.messages]
     messages.push({
       id: Date.now(),
-      userName: this.props.user.userName,
+      user: this.props.user,
       body,
     })
 
-    this.setState({ messages: messages })
+    this.setState({ messages })
   }
 
   render() {
     return (
-      <div 
-        className="Chat"
-        style={styles}
-      >
-        <ChatHeader/>
+      <div className="Chat" style={styles}>
+        <ChatHeader />
         <MessageList messages={this.state.messages} />
         <MessageForm addMessage={this.addMessage} />
       </div>
@@ -50,7 +36,7 @@ class Chat extends Component {
 }
 
 const styles = {
-  flex: '1',
+  flex: 1,
   display: 'flex',
   flexDirection: 'column',
 }
