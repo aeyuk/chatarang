@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Message = (props) => {
+const Message = ({ message }) => {
     return (
         <div 
             className="Message" style={styles.message}>
@@ -10,7 +10,7 @@ const Message = (props) => {
                     <div 
                         className="user"
                         style={styles.user}
-                    >{props.message.userName}
+                    >{message.userName}
                     </div>
                     <div 
                         className="time"
@@ -21,7 +21,7 @@ const Message = (props) => {
                 <div
                     className="body"
                     style={styles.body}
-                >{props.message.body}
+                >{message.body}
                 </div>
             </div>
         </div>
