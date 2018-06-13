@@ -7,7 +7,8 @@ class App extends Component {
   state = {
     user: {
       uid: '055234085238',
-      userName: 'Cate'
+      userName: 'Cate',
+      email: 'catey@email.com',
     },
   }
 
