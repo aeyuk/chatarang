@@ -7,7 +7,6 @@ import Main from './Main'
 class App extends Component {
   state = {
     user: {},
-    channel: 'general',
   }
 
   componentDidMount() {
@@ -31,16 +30,12 @@ class App extends Component {
     localStorage.removeItem('user')
   }
 
-  setChannel = (channel) => {
-    this.setState({ channel })
-  }
-
   render() {
     return (
       <div className="App">
         {
           this.signedIn()
-            ? <Main user={this.state.user} signOut={this.signOut} channel={this.state.channel} setChannel={this.setChannel}/>
+            ? <Main user={this.state.user} signOut={this.signOut}/>
             : <SignIn handleAuth={this.handleAuth} />
         }
       </div>

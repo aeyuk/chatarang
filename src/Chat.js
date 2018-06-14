@@ -15,13 +15,12 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    base.syncState(`${this.props.channel}`, {
+    base.syncState('random/messages', {
       context: this,
       state: 'messages',
       asArray: true,
     })
   }
-
 
   addMessage = (body) => {
     const messages = [...this.state.messages]
@@ -34,12 +33,14 @@ class Chat extends Component {
     this.setState({ messages })
   }
 
-
   render() {
     return (
       <div className="Chat" style={styles}>
-        <ChatHeader channel={this.props.channel}/>
-        <MessageList messages={this.state.messages} channel={this.props.channel}/>
+        <ChatHeader room={this.props.room} />
+        <MessageList
+          messages={this.state.messages}
+          room={this.props.room}
+        />
         <MessageForm addMessage={this.addMessage} />
       </div>
     )
