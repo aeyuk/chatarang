@@ -15,12 +15,13 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    base.syncState('messages', {
+    base.syncState(`${this.props.channel}`, {
       context: this,
       state: 'messages',
       asArray: true,
     })
   }
+
 
   addMessage = (body) => {
     const messages = [...this.state.messages]
@@ -32,6 +33,7 @@ class Chat extends Component {
 
     this.setState({ messages })
   }
+
 
   render() {
     return (

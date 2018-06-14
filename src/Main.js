@@ -10,8 +10,9 @@ class Main extends Component {
         <Sidebar
           user={this.props.user}
           signOut={this.props.signOut}
+          setChannel={this.props.setChannel}
         />
-        <Chat user={this.props.user} />
+        <Chat user={this.props.user} channel={this.props.channel}/>
       </div>
     )
   }
