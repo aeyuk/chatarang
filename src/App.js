@@ -37,9 +37,7 @@ class App extends Component {
     const user = {
       uid: oauthUser.uid,
       displayName: oauthUser.displayName,
-      google: oauthUser.google,
-      github: oauthUser.github,
-      twitter: oauthUser.twitter,
+      email: oauthUser.email,
       photoUrl: oauthUser.photoURL,
     }
     this.setState({ user })

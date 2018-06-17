@@ -5,6 +5,7 @@ import { auth, googleProvider, githubProvider, twitterProvider } from './base'
 
 class SignIn extends Component {
   state = {
+    email: '',
     google: '',
     github: '',
     twitter: '',
