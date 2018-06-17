@@ -12,18 +12,6 @@ class SignIn extends Component {
 
   }
 
-  handleGoogleChange = (ev) => {
-    this.setState({ google: ev.target.value })
-  }
-
-  handleGithubChange = (ev) => {
-    this.setState({ github: ev.target.value })
-  }
-
-  handleTwitterChange = (ev) => {
-    this.setState({ twitter: ev.target.value })
-  }
-
   handleSubmit = (ev) => {
     ev.preventDefault()
     // do something?
@@ -78,7 +66,7 @@ class SignIn extends Component {
             <button
               type="button"
               className={css(styles.twitterButton)}
-              onClick={this.googleAuthenticate}
+              onClick={this.twitterAuthenticate}
             >
               <i className={`fab fa-twitter ${css(styles.brandIcon)}`}></i>
               Sign in with Twitter
