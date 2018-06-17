@@ -1,15 +1,26 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import { auth, googleProvider, githubProvider } from './base'
+import { auth, googleProvider, githubProvider, twitterProvider } from './base'
 
 class SignIn extends Component {
   state = {
-    email: '',
+    google: '',
+    github: '',
+    twitter: '',
+
   }
 
-  handleChange = (ev) => {
-    this.setState({ email: ev.target.value })
+  handleGoogleChange = (ev) => {
+    this.setState({ google: ev.target.value })
+  }
+
+  handleGithubChange = (ev) => {
+    this.setState({ github: ev.target.value })
+  }
+
+  handleTwitterChange = (ev) => {
+    this.setState({ twitter: ev.target.value })
   }
 
   handleSubmit = (ev) => {
@@ -23,6 +34,10 @@ class SignIn extends Component {
 
   gitHubAuthenticate = () => {
     auth.signInWithPopup(githubProvider)
+  }
+
+  twitterAuthenticate = () => {
+    auth.signInWithPopup(twitterProvider)
   }
 
   render() {
@@ -43,7 +58,7 @@ class SignIn extends Component {
 
             <button
               type="button"
-              className={css(styles.button)}
+              className={css(styles.googleButton)}
               onClick={this.googleAuthenticate}
             >
               <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
@@ -52,11 +67,20 @@ class SignIn extends Component {
 
             <button
               type="button"
-              className={css(styles.button)}
+              className={css(styles.githubButton)}
               onClick={this.gitHubAuthenticate}
             >
               <i className={`fab fa-github ${css(styles.brandIcon)}`}></i>
               Sign in with GitHub
+            </button>
+
+            <button
+              type="button"
+              className={css(styles.twitterButton)}
+              onClick={this.googleAuthenticate}
+            >
+              <i className={`fab fa-twitter ${css(styles.brandIcon)}`}></i>
+              Sign in with Twitter
             </button>
           </form>
 
@@ -129,13 +153,33 @@ const styles = StyleSheet.create({
   h2: {
     fontWeight: 'normal',
   },
-  button: {
+  googleButton: {
     display: 'block',
     margin: '0 auto',
     padding: '1rem 2rem',
     fontSize: '1.2rem',
     borderRadius: '1rem',
-    backgroundColor: '#ff3333',
+    backgroundColor: '#ea4335',
+    color: 'white',
+    width: '20rem',
+  },
+  githubButton: {
+    display: 'block',
+    margin: '0 auto',
+    padding: '1rem 2rem',
+    fontSize: '1.2rem',
+    borderRadius: '1rem',
+    backgroundColor: '#c9510c',
+    color: 'white',
+    width: '20rem',
+  },
+  twitterButton: {
+    display: 'block',
+    margin: '0 auto',
+    padding: '1rem 2rem',
+    fontSize: '1.2rem',
+    borderRadius: '1rem',
+    backgroundColor: '#1da1f2',
     color: 'white',
     width: '20rem',
   },
@@ -143,4 +187,5 @@ const styles = StyleSheet.create({
     marginRight: '1rem',
   },
 })
+
 export default SignIn
