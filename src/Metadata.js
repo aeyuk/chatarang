@@ -2,7 +2,8 @@ import React from 'react'
 
 const Metadata = ({ message }) => {
   function getTime() {
-    let currentTime = new Date()
+    let currentTime = message.id
+    currentTime = new Date(message.id)
     currentTime = currentTime.getHours() + ':' + currentTime.getMinutes()
     return currentTime
   }
