@@ -9,7 +9,6 @@ class SignIn extends Component {
     google: '',
     github: '',
     twitter: '',
-
   }
 
   handleSubmit = (ev) => {

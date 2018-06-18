@@ -1,13 +1,18 @@
 import React from 'react'
 
 const Metadata = ({ message }) => {
+  function getTime() {
+    let currentTime = new Date()
+    currentTime = currentTime.getHours() + ':' + currentTime.getMinutes()
+    return currentTime
+  }
   return (
     <div className="Metadata" style={styles.data}>
       <div className="user" style={styles.user}>
         {message.user.displayName}
       </div>
       <div className="time" style={styles.time}>
-        1:10 PM
+        {getTime()}
       </div>
     </div>
   )
