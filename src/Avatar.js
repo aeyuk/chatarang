@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Avatar = ({user, style}) => {
+const Avatar = ({ user, style }) => {
   return (
     <div
       className="Avatar"
@@ -8,7 +8,7 @@ const Avatar = ({user, style}) => {
         ...styles,
         ...style,
         background: `url(https://api.adorable.io/avatars/40/${user.email})`,
-    }}
+      }}
     ></div>
   )
 }
