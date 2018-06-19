@@ -10,7 +10,7 @@ class Main extends Component {
 
     this.state = {
       room: {},
-      rooms: {},
+      rooms: {}
     }
   }
 
@@ -35,11 +35,9 @@ class Main extends Component {
 
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.roomName !== this.props.match.params.roomName 
-      && Object.keys(this.state.rooms) > 0) {
+    if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
       this.loadRoom({
         name: this.props.match.params.roomName,
-        description: this.state.rooms[this.props.match.params.roomName].description,
       })
     }
   }
@@ -60,7 +58,6 @@ class Main extends Component {
         <Chat
           user={this.props.user}
           room={this.state.room}
-          
         />
       </div>
     )
