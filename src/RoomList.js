@@ -7,6 +7,7 @@ import RoomForm from './RoomForm'
 import base from './base'
 
 class RoomList extends Component {
+  
   state = {
     rooms: {},
   }
@@ -20,6 +21,7 @@ class RoomList extends Component {
       }
     )
   }
+  
 
   addRoom = (room) => {
     const rooms = {...this.state.rooms}
