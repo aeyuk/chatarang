@@ -23,6 +23,7 @@ class Main extends Component {
     )
   }
 
+
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
       this.loadRoom(this.props.match.params.roomName)
@@ -59,13 +60,23 @@ class Main extends Component {
     )
   }
 
+  
+  checkMember = (room) => {
+  }
+  
+
   render() {
+    const roomArray = Object.keys(this.state.rooms).filter(
+      roomName => this.state.rooms[roomName].public
+    ).map(roomName => this.state.rooms[roomName])
+
     return (
       <div className="Main" style={styles}>
         <Sidebar
           user={this.props.user}
           users={this.props.users}
           signOut={this.props.signOut}
+          roomArray={roomArray}
         />
         <Chat
           user={this.props.user}

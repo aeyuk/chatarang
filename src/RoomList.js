@@ -22,9 +22,9 @@ class RoomList extends Component {
   }
 
   addRoom = (room) => {
-    const rooms = {...this.state.rooms}
-    rooms[room.name] = room
-    this.setState({ rooms })
+      const rooms = {...this.state.rooms}
+      rooms[room.name] = room
+      this.setState({ rooms })
   }
 
   render() {
@@ -57,11 +57,11 @@ class RoomList extends Component {
                 </div>
                 <ul className={css(styles.list)}>
                   {
-                    Object.keys(this.state.rooms).map(
+                    Object.keys(this.props.roomArray).map(
                       roomName => (
                         <RoomLink
                           key={roomName}
-                          room={this.state.rooms[roomName]}
+                          room={this.props.roomArray[roomName]}
                         />
                       )
                     )
