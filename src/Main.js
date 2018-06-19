@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
+import base from './base'
 
 class Main extends Component {
   constructor() {
     super()
 
     this.state = {
-      room: {}
+      room: {},
+      rooms: {}
     }
   }
 
@@ -16,7 +18,21 @@ class Main extends Component {
     this.loadRoom({
       name: this.props.match.params.roomName,
     })
+    base.syncState(
+      'rooms',
+      {
+        context: this,
+        state: 'rooms',
+      }
+    )
   }
+
+  addRoom = (room) => {
+    const rooms = {...this.state.rooms}
+    rooms[room.name] = room
+    this.setState({ rooms })
+  }
+
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
@@ -35,7 +51,9 @@ class Main extends Component {
       <div className="Main" style={styles}>
         <Sidebar
           user={this.props.user}
+          rooms={this.state.rooms}
           signOut={this.props.signOut}
+          addRoom={this.addRoom}
         />
         <Chat
           user={this.props.user}
