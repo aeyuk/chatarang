@@ -4,11 +4,10 @@ import { StyleSheet, css } from 'aphrodite'
 class RoomForm extends Component {
   state = {
     room: {
-        name: '',
-        description: ''
-    },
+      name: '',
+      description: '',
+    }
   }
-
   handleSubmit = (ev) => {
     ev.preventDefault()
     this.props.addRoom(this.state.room)
@@ -20,6 +19,7 @@ class RoomForm extends Component {
     room[ev.target.name] = ev.target.value
     this.setState({ room })
   }
+
 
   render() {
     return (
