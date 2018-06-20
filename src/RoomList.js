@@ -22,12 +22,15 @@ class RoomList extends Component {
   }
 
   addRoom = (room) => {
-      const rooms = {...this.state.rooms}
-      rooms[room.name] = room
-      this.setState({ rooms })
+    const rooms = {...this.state.rooms}
+    rooms[room.name] = room
+    this.setState({ rooms })
   }
 
+
+
   render() {
+    
     return (
       <Switch>
         <Route

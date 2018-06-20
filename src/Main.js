@@ -51,6 +51,7 @@ class Main extends Component {
   }
 
   removeRoom = (room) => {
+
     const rooms = {...this.state.rooms}
     rooms[room.name] = null
 
@@ -59,24 +60,39 @@ class Main extends Component {
       this.loadValidRoom
     )
   }
+  checkMember = (roomName) =>{
+    if(this.state.rooms[roomName].public){
+      return true
+    }
+    else{ 
+      const memberArray = this.state.rooms[roomName].members.map(member => 
+        this.props.user.uid === member.value
+      )
+     
+     for(let i = 0; i < memberArray.length; i++){
+       if(memberArray[i] === true){
+         return true
+       }
+      }
+      return false
 
-  
-  checkMember = (room) => {
+
   }
-  
+}
 
   render() {
     const roomArray = Object.keys(this.state.rooms).filter(
-      roomName => this.state.rooms[roomName].public
-    ).map(roomName => this.state.rooms[roomName])
+      roomName => this.checkMember(roomName)).map(roomName => this.state.rooms[roomName])
 
+
+  
     return (
       <div className="Main" style={styles}>
         <Sidebar
           user={this.props.user}
           users={this.props.users}
           signOut={this.props.signOut}
-          roomArray={roomArray}
+          roomArray = {roomArray}
         />
         <Chat
           user={this.props.user}
