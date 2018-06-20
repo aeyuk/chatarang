@@ -8,7 +8,7 @@ const Message = ({ message }) => {
     <div className="Message" style={styles.message}>
       <Avatar user={message.user} />
       <div className="details" style={styles.details}>
-        <Metadata message={message}/>
+        <Metadata message={message} />
         <div className="body">
           {message.body}
         </div>

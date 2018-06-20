@@ -175,5 +175,4 @@ const styles = StyleSheet.create({
     marginRight: '1rem',
   },
 })
-
 export default SignIn
