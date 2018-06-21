@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const Metadata = ({ message }) => {
+const Metadata = ({ message, emoji}) => {
   return (
     <div className="Metadata" style={styles.data}>
       <div className="user" style={styles.user}>
@@ -11,6 +11,9 @@ const Metadata = ({ message }) => {
         <span title={moment(message.createdAt).format('D MMM @ h:mm a')}>
           {moment(message.createdAt).fromNow()}
         </span>
+      </div>
+      <div className="emoji">
+        {emoji.native}
       </div>
     </div>
   )
