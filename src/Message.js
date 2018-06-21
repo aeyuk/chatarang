@@ -9,6 +9,7 @@ import Metadata from './Metadata'
 class Message extends Component {
   state = {
     showPicker: false,
+    emoji: '',
   }
 
   togglePicker = () => {
@@ -16,7 +17,7 @@ class Message extends Component {
   }
 
   handleEmojiSelect = (emoji) => {
-    console.log(emoji)
+    this.setState({emoji: emoji})
     this.togglePicker()
   }
 
@@ -27,7 +28,7 @@ class Message extends Component {
       <div className={`Message ${css(styles.message)}`}>
         <Avatar user={message.user} />
         <div className={css(styles.details)}>
-          <Metadata message={message} />
+          <Metadata message={message} emoji={this.state.emoji}/>
           <div className="body">
             {message.body}
           </div>
